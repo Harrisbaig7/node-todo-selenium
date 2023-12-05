@@ -24,7 +24,7 @@ describe('webdriver', () => {
     }, 4000);
   
     it('test App loads', async () => {
-      console.log("Testing If app loads");
+      console.log("Testing If App Loads");
       const title = await driver.getTitle()
       console.log(title)
       assert.equal(title, "Node To Do Application");
@@ -36,7 +36,7 @@ describe('webdriver', () => {
       assert.equal(added_tasksUpdated.length, 0);
     }, 5000);
 
-    it('Add new task', async () => {
+    it('Add New Task', async () => {
       const added_tasks = await driver.findElements(By.css(".added-tasks"))
       const field = await driver.findElement(By.css(".add-task-input"))
       // console.log(field);
@@ -47,7 +47,7 @@ describe('webdriver', () => {
       
     }, 5000);
 
-    it('Verify newely added task', async () => {
+    it('Verify Newely Added Task', async () => {
       const added_tasks = await driver.findElements(By.css(".added-tasks-input"))
       assert.equal(await added_tasks[added_tasks.length-1].getText(), "New Task");
     }, 5000);
